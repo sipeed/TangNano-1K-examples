@@ -10,15 +10,31 @@ TangNano-1K have independent 27M oscillator for FPGA, and remove the psram chip(
 
 1. RGB led
 
-Builk board led.
+Blink board led.
 
-Burn the `led_pjt.fs` into Tang Nano 1K to check your projuct.
+Visit `example_led/led_pjt` to see this project. Burn the `led_pjt.fs` into Tang Nano 1K to check your projuct.
 
-2. RGB LCD
+[Tang Nano 1K Schematic](https://dl.sipeed.com/shareURL/TANG/Nano%201K/2_Schematic)
 
-Drive the RGB 40pin lcd screen.
+2. RGB 5_inch LCD
 
-Burn the `lcd_pjt.fs` into Tang Nano 1K to check your projuct.
+Drive the 5_inch RGB 40pin lcd screen.
+
+Visit `example_lcd/lcd_pjt` to see this project. Burn the `lcd_pjt.fs` into Tang Nano 1K to check your projuct.
+
+[Screen datasheet](https://dl.sipeed.com/shareURL/TANG/Nano%209K/6_Chip_Manual/EN/LCD_Datasheet)
+
+3. RGB 4.3_inch LCD
+
+Drive the 4.3_inch RGB 40pin lcd screen.
+
+Visit `example_lcd/lcd_43` to see this project. Burn the `lcd_43.fs` into Tang Nano 1K to check your projuct.
+
+[Screen datasheet](https://dl.sipeed.com/shareURL/TANG/Nano%209K/6_Chip_Manual/EN/LCD_Datasheet)
+
+4. RGB 7.0_inch LCD
+
+This screen using the same driver as 5_inch LCD.
 
 ## Questions
 

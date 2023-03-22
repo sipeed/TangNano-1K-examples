@@ -1,6 +1,7 @@
 module TOP
 (
-	input			nRST,
+	input			Reset_Button,
+    input           User_Button,
     input           XTAL_IN,
 
 	output			LCD_CLK,
@@ -13,29 +14,18 @@ module TOP
 
     output          LED_R,
     output          LED_G,
-    output          LED_B,
-    input           KEY
-
+    output          LED_B
 );
 
-	wire		CLK_SYS;	
-	wire		CLK_PIX;
+    Gowin_rPLL Gowin_rPLL_9Mhz(
+        .clkout(LCD_CLK), // 9MHz
+        .clkin(XTAL_IN)   //27MHz
+    );
 
-    wire        oscout_o;
+	VGAMod	VGAMod_inst(
+		.PixelClk	(	LCD_CLK		),
+		.nRST		(	Reset_Button),
 
-    Gowin_rPLL chip_pll(
-        .clkout(CLK_SYS), //output clkout      //200M
-        .clkoutd(CLK_PIX), //output clkoutd   //33.33M
-        .clkin(XTAL_IN) //input clkin
-    );	
-
-
-	VGAMod	D1
-	(
-		.CLK		(	CLK_SYS     ),
-		.nRST		(	nRST		),
-
-		.PixelClk	(	CLK_PIX		),
 		.LCD_DE		(	LCD_DEN	 	),
 		.LCD_HSYNC	(	LCD_HYNC 	),
     	.LCD_VSYNC	(	LCD_SYNC 	),
@@ -45,14 +35,13 @@ module TOP
 		.LCD_R		(	LCD_R		)
 	);
 
-	assign		LCD_CLK		=	CLK_PIX;
 
     //RGB LED TEST
     reg 	[31:0] counter;
     reg     [2:0] led;
 
-    always @(posedge XTAL_IN or negedge nRST) begin
-        if (!nRST) begin
+    always @(posedge XTAL_IN or negedge Reset_Button) begin
+        if (!Reset_Button) begin
             counter <= 31'd0;
             led <= 3'b110;
         end

@@ -17,17 +17,6 @@ module VGAMod
     reg         [15:0]  PixelCount;
     reg         [15:0]  LineCount;
 
-	//pluse include in back pluse; t=pluse, sync act; t=bp, data act; t=bp+height, data end
-	/*localparam      V_BackPorch = 16'd12; 
-	localparam      V_Pluse 	= 16'd11; 
-	localparam      HightPixel  = 16'd272;
-	localparam      V_FrontPorch= 16'd8; 
-	
-	localparam      H_BackPorch = 16'd50; 
-	localparam      H_Pluse 	= 16'd10; 
-	localparam      WidthPixel  = 16'd480;
-	localparam      H_FrontPorch= 16'd8;    */
-
 	localparam      V_BackPorch = 16'd0; //6
 	localparam      V_Pluse 	= 16'd5; 
 	localparam      HightPixel  = 16'd480;
