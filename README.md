@@ -28,7 +28,7 @@ Visit `example_lcd/lcd_pjt` to see this project. Burn the `lcd_pjt.fs` into Tang
 
 Drive the 4.3_inch RGB 40pin lcd screen.
 
-Visit `example_lcd/lcd_43` to see this project. Burn the `lcd_43.fs` into Tang Nano 1K to check your projuct.
+Visit `example_lcd/lcd_480_272` to see this project. Burn the `lcd_43.fs` into Tang Nano 1K to check your projuct.
 
 [Screen datasheet](https://dl.sipeed.com/shareURL/TANG/Nano%209K/6_Chip_Manual/EN/LCD_Datasheet)
 
